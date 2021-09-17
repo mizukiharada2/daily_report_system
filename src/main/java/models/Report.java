@@ -67,16 +67,16 @@ public class Report {
     private Employee employee;
 
     /**
-     * 日報のタイトル
-     */
-    @Column(name = JpaConst.REP_COL_TITLE,length =255 , nullable =false)
-    private String title;
-
-    /**
      * いつの日報かを示す日付
      */
     @Column(name = JpaConst.REP_COL_REP_DATE, nullable = false)
     private LocalDate reportDate;
+
+    /**
+     * 日報のタイトル
+     */
+    @Column(name = JpaConst.REP_COL_TITLE,length =255 , nullable =false)
+    private String title;
 
     /**
      * 日報の内容
