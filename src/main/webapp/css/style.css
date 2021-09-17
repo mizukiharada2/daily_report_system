@@ -152,3 +152,6 @@ teble#report_list .report_action {
     width: 13%;
 }
 
+pre {
+    font-family: "hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+}
