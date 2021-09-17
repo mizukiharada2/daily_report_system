@@ -9,7 +9,6 @@ import models.Report;
  * 日報データのDTOモデル⇔Viewモデルの変換を行うクラス
  *
  */
-
 public class ReportConverter {
 
     /**
@@ -33,10 +32,9 @@ public class ReportConverter {
      * @param r Reportのインスタンス
      * @return ReportViewのインスタンス
      */
-
     public static ReportView toView(Report r) {
 
-        if(r == null) {
+        if (r == null) {
             return null;
         }
 
@@ -48,15 +46,13 @@ public class ReportConverter {
                 r.getContent(),
                 r.getCreatedAt(),
                 r.getUpdatedAt());
-
     }
 
     /**
      * DTOモデルのリストからViewモデルのリストを作成する
-     * @param lis DTOモデルのリスト
+     * @param list DTOモデルのリスト
      * @return Viewモデルのリスト
      */
-
     public static List<ReportView> toViewList(List<Report> list) {
         List<ReportView> evs = new ArrayList<>();
 
@@ -72,7 +68,6 @@ public class ReportConverter {
      * @param r DTOモデル(コピー先)
      * @param rv Viewモデル(コピー元)
      */
-
     public static void copyViewToModel(Report r, ReportView rv) {
         r.setId(rv.getId());
         r.setEmployee(EmployeeConverter.toModel(rv.getEmployee()));
@@ -86,17 +81,16 @@ public class ReportConverter {
 
     /**
      * DTOモデルの全フィールドの内容をViewモデルのフィールドにコピーする
-     * @param r DTOモデル（コピー元）
-     * @param rv Viewモデル（コピー先）
+     * @param r DTOモデル(コピー元)
+     * @param rv Viewモデル(コピー先)
      */
     public static void copyModelToView(Report r, ReportView rv) {
         rv.setId(r.getId());
         rv.setEmployee(EmployeeConverter.toView(r.getEmployee()));
         rv.setReportDate(r.getReportDate());
         rv.setTitle(r.getTitle());
-        rv.setTitle(r.getTitle());
         rv.setCreatedAt(r.getCreatedAt());
         rv.setUpdatedAt(r.getUpdatedAt());
-
     }
+
 }
